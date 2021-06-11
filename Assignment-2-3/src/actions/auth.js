@@ -13,9 +13,10 @@ const loginStart = () => {
   };
 };
 
-const loginSuccess = () => {
+const loginSuccess = (username) => {
   return {
     type: LOGIN_SUCCESS,
+    username: username
   };
 };
 
@@ -42,7 +43,7 @@ export const login = (username, password) => {
         password: password,
       })
       .then((res) => {
-        localStorage.setItem("token", res.data);
+        // localStorage.setItem("token", res.data);
         //dispatch(loginSuccess())
       })
       .catch((err) => {
@@ -50,13 +51,13 @@ export const login = (username, password) => {
         //dispatch(loginFailed());
       });
     setTimeout(() => {
-      dispatch(loginSuccess());
+      dispatch(loginSuccess(username));
     }, 800);
   };
 };
 
 export const logout = () => {
-    console.log("hey")
+  console.log("hey");
   localStorage.removeItem("token");
   return {
     type: LOGOUT,

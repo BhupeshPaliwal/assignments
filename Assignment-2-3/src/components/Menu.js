@@ -1,10 +1,11 @@
 import React from "react";
 import { Menu } from "antd";
 import {
-  MailOutlined,
   AppstoreOutlined,
-  SettingOutlined,
   LogoutOutlined,
+  UserOutlined,
+  HomeOutlined,
+  ContactsOutlined,
 } from "@ant-design/icons";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
@@ -30,13 +31,13 @@ class MenuComponent extends React.Component {
         selectedKeys={[current]}
         mode="horizontal"
       >
-        <Menu.Item key="home" icon={<MailOutlined />}>
+        <Menu.Item key="home" icon={<HomeOutlined />}>
           <NavLink to="/">Home</NavLink>
         </Menu.Item>
         <Menu.Item key="about" icon={<AppstoreOutlined />}>
           <NavLink to="/about">About</NavLink>
         </Menu.Item>
-        <Menu.Item key="contact" icon={<SettingOutlined />}>
+        <Menu.Item key="contact" icon={<ContactsOutlined />}>
           <NavLink to="/contact">Contact</NavLink>
         </Menu.Item>
         <Menu.Item
@@ -47,12 +48,21 @@ class MenuComponent extends React.Component {
         >
           <span>Logout</span>
         </Menu.Item>
+        <Menu.Item
+          icon={<UserOutlined />}
+          style={{ float: "right" }}
+          onClick={null}
+        >
+          <span>Hello, {this.props.username}</span>
+        </Menu.Item>
       </Menu>
     );
   }
 }
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+  username: state.username,
+});
 
 const mapDispatchToProps = (dispatch) => ({
   logout: () => dispatch(logout()),

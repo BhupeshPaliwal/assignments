@@ -13,6 +13,7 @@ const initalState = {
     value: false,
     message: "",
   },
+  username: "",
 };
 
 const reducer = (state = initalState, action) => {
@@ -31,6 +32,7 @@ const reducer = (state = initalState, action) => {
           value: false,
           message: "",
         },
+        username: action.username,
       };
     case LOGIN_FAILED:
       return {
@@ -41,6 +43,7 @@ const reducer = (state = initalState, action) => {
           value: true,
           message: action.message,
         },
+        username: "",
       };
     case SET_AUTH:
       return {
@@ -56,6 +59,7 @@ const reducer = (state = initalState, action) => {
           value: false,
           message: "",
         },
+        username: "",
       };
     default:
       return state;
