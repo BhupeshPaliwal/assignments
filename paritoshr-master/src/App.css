@@ -1,0 +1,12 @@
+@import '~antd/dist/antd.css';
+.App {
+  margin-top: 0px;
+}
+
+.App .navbar-brand {
+  font-weight: bold;
+}
+
+.App .container{
+  align-content: center
+}
