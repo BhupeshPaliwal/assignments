@@ -1,0 +1,39 @@
+.logo {
+  float: left;
+  width: 120px;
+  height: 31px;
+  margin: 16px 24px 16px 0;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.ant-row-rtl .logo {
+  float: right;
+  margin: 16px 0 16px 24px;
+}
+
+.site-layout-background {
+  background: #fff;
+}
+
+input {
+  height: 30px;
+  font-size: 15px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+form {
+  display: block;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  font-family: Comic Sans MS;
+  font-size: 30px;
+}
