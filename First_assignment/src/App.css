@@ -1,0 +1,14 @@
+.sq {
+  font-weight: bold;
+  text-align: center;
+  font-size: 30px;
+  background-color: orange;
+  width: 100px;
+  height : 100px;
+  
+  
+}
+.comment{
+  font-weight: bold;
+  font-size: 30px;
+}
