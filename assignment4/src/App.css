@@ -1,0 +1,22 @@
+@import "~antd/dist/antd.css";
+.App {
+  margin-top: 0px;
+}
+
+.App .navbar-brand {
+  font-weight: bold;
+}
+
+.App .container {
+  align-content: center;
+}
+body {
+  background-color: orange;
+  color: blue;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  min-height: 1000vh;
+  padding: 10rem;
+}
