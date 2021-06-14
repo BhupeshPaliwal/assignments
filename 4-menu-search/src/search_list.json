@@ -1,6 +1,4 @@
-[
-	{"searched":"regular"} , 
-	{"searched":"legendary"} , 
+[ 
 	{"searched":"gen 1"} , 
 	{"searched":"gen 2"} , 
 	{"searched":"gen 3"} , 
@@ -28,5 +26,7 @@
 	{"searched":"thundurus"} , 
 	{"searched":"hooh"} , 
 	{"searched":"lugia"} , 
-	{"searched":"zapdos"}
+	{"searched":"zapdos"} ,
+	{"searched":"regular"} , 
+	{"searched":"legendary"} 
 ] 
