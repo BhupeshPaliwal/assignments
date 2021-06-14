@@ -1,40 +1,10 @@
-import React from 'react';
-import Login from './Login'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-  } from "react-router-dom";
+import React from "react";
+import Home from "./pages/home";
+//import "antd/dist/antd.css";
 
-import {Home, About, Contact} from './pages/Index';
-import { Nav } from './layout';
-
-function App() {
-  return (
-  <Router>
-   <Nav />
-    <Switch>
-
-     <Route path='/About'>
-    <About />
-    </Route> 
- 
-      <Route path='/Contact'>
-    <Contact />
-    </Route> 
-    
-    <Route path='/'>
-    <Home />
-    </Route> 
-    <Route path='/Login'>
-    <Login />
-    </Route>
-
-      
-       </Switch>
-    </Router>
-    );
-}
+const App = (props) => {
+  const Routes = Home ;
+  return <Routes />;
+};
 
 export default App;
