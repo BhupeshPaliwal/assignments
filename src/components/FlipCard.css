@@ -1,0 +1,30 @@
+body {
+  padding: 2rem;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.label {
+  margin-bottom: 0.5rem;
+}
+.hide {
+  display: none;
+}
+    
+.myDIV:hover + .hide {
+  display: block;
+  color: red;
+}
+
+
+@import '../../node_modules/@syncfusion/ej2-layouts/styles/material.css';
+
+.modes {
+  margin-bottom: 1rem;
+}
+.button {
+  position: absolute;
+  left: 40px;
+  top: 33px;
+}
+
