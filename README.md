@@ -8,8 +8,7 @@ Refer Syncfusion React JS library [here](https://ej2.syncfusion.com/react/docume
 
 ## Setup
 
-`git clone https://github.com/ShayanMajumder/Form.git`\
-`cd Form` \
+
 `npm install` \
 `npm start` or `yarn start`
 
