@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { CSSTransition } from "react-transition-group";
 import "./FlipCard.css";
 import ShowForm from './button';
-import {Category, ChartComponent, Inject, SplineSeries, SeriesDirective, SeriesCollectionDirective, Legend, DataLabel, Tooltip} from "@syncfusion/ej2-react-charts";
-import {salesData, temperaturedata, volumeData} from './data';
+import {Category, ChartComponent, Inject, SplineSeries, SeriesDirective, SeriesCollectionDirective, Legend, DataLabel, Tooltip, ColumnSeries, LineSeries} from "@syncfusion/ej2-react-charts";
+import {currentData, salesData, TemperatureData, voltageData, volumeData} from './data';
 
 
 
@@ -53,24 +53,54 @@ class FlipCard extends Component {
       , 2000); //Set interval here
     }
   maincContent()
-  {if (this.state.data.devices.device=="Temperature")
+  
+  { 
+    if (this.state.data.devices.device=="Temperature")
     {
     return(
       <div className="e-card " style={{ width: `1000px`, height: '1000px', backgroundColor: 'green'}}>
     <div class="e-card-header" > 
+    
     <div className="e-card-header-caption">
     <ChartComponent title={this.state.data.main_title} primaryXAxis={{valueType:"Category", title:"Month"}} 
-primaryYAxis={{title:"Temperature"}} legendSettings={{visible:true}} tooltip={{enable:true}}>
+primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible:true}} tooltip={{enable:true}}>
+  
   <Inject services={[SplineSeries, Category, Legend, DataLabel,Tooltip]}></Inject>
   <SeriesCollectionDirective>
+    
     <SeriesDirective 
     type="Spline" 
-    dataSource={temperaturedata}
+    dataSource={TemperatureData}
     xName="month"
     yName="Temperature"
     name="Temperature"
     marker={{dataLabel:{visible: true}, visible:true}}
     ></SeriesDirective>
+    
+    
+    
+    
+  </SeriesCollectionDirective>
+</ChartComponent>
+<br/>
+<ChartComponent title={this.state.data.main_title} primaryXAxis={{valueType:"Category", title:"Month"}} 
+primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible:true}} tooltip={{enable:true}}>
+  
+  <Inject services={[ColumnSeries, LineSeries, Category, Legend, DataLabel,Tooltip]}></Inject>
+  <SeriesCollectionDirective>
+    
+    <SeriesDirective 
+    type="Column" 
+    dataSource={TemperatureData}
+    xName="month"
+    yName="Temperature"
+    name="Temperature"
+    
+    ></SeriesDirective>
+    
+    
+    
+    
   </SeriesCollectionDirective>
 </ChartComponent>
       {/* <div className="e-card-title" style ={{position: 'absolute', left: '10px',top: '0', fontSize: '250%', fontStyle: 'initial'}}>
@@ -109,16 +139,371 @@ primaryYAxis={{title:"Temperature"}} legendSettings={{visible:true}} tooltip={{e
     
     <div className="e-card-header-caption">
     <ChartComponent title={this.state.data.main_title}  primaryXAxis={{valueType:'Category', title:"month"}} 
-primaryYAxis={{title:"Volume"}} legendSettings={{visible:true}} tooltip={{enable:true}}>
+primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible:true}} tooltip={{enable:true}}>
   <Inject services={[SplineSeries, Category, Legend, DataLabel,Tooltip]}></Inject>
   <SeriesCollectionDirective>
     <SeriesDirective 
     type="Spline" 
     dataSource={volumeData}
     xName="month"
-    yName="Volume"
+    yName="Temperature"
     name="Volumeplot"
     marker={{dataLabel:{visible: true}, visible:true}}
+    ></SeriesDirective>
+  </SeriesCollectionDirective>
+</ChartComponent>
+<br/>
+<ChartComponent title={this.state.data.main_title}  primaryXAxis={{valueType:'Category', title:"month"}} 
+primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible:true}} tooltip={{enable:true}}>
+  <Inject services={[ColumnSeries, Category, Legend, DataLabel,Tooltip]}></Inject>
+  <SeriesCollectionDirective>
+    <SeriesDirective 
+    type="Column" 
+    dataSource={volumeData}
+    xName="month"
+    yName="Temperature"
+    name="Volumeplot"
+    ></SeriesDirective>
+  </SeriesCollectionDirective>
+</ChartComponent>
+      
+    </div>
+    </div>
+    </div>
+      ); 
+    }
+    else if (this.state.data.devices.device=="Voltage") {
+      return(
+      <div className="e-card " style={{ width: `1000px`, height: '1000px', backgroundColor: 'green'}}>
+    <div class="e-card-header" > 
+    
+    <div className="e-card-header-caption">
+    <ChartComponent title={this.state.data.main_title}  primaryXAxis={{valueType:'Category', title:"month"}} 
+primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible:true}} tooltip={{enable:true}}>
+  <Inject services={[SplineSeries, Category, Legend, DataLabel,Tooltip]}></Inject>
+  <SeriesCollectionDirective>
+    <SeriesDirective 
+    type="Spline" 
+    dataSource={voltageData}
+    xName="month"
+    yName="Temperature"
+    name={this.state.data.devices.device}
+    marker={{dataLabel:{visible: true}, visible:true}}
+    ></SeriesDirective>
+  </SeriesCollectionDirective>
+</ChartComponent>
+      
+<ChartComponent title={this.state.data.main_title}  primaryXAxis={{valueType:'Category', title:"month"}} 
+primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible:true}} tooltip={{enable:true}}>
+  <Inject services={[ColumnSeries, Category, Legend, DataLabel,Tooltip]}></Inject>
+  <SeriesCollectionDirective>
+    <SeriesDirective 
+    type="Column" 
+    dataSource={voltageData}
+    xName="month"
+    yName="Temperature"
+    name={this.state.data.devices.device}
+    ></SeriesDirective>
+  </SeriesCollectionDirective>
+</ChartComponent>
+    </div>
+    </div>
+    </div>
+      ); 
+    }
+    else if (this.state.data.devices.device=="Current") {
+      return(
+      <div className="e-card " style={{ width: `1000px`, height: '1000px', backgroundColor: 'green'}}>
+    <div class="e-card-header" > 
+    
+    <div className="e-card-header-caption">
+    <ChartComponent title={this.state.data.main_title}  primaryXAxis={{valueType:'Category', title:"month"}} 
+primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible:true}} tooltip={{enable:true}}>
+  <Inject services={[SplineSeries, Category, Legend, DataLabel,Tooltip]}></Inject>
+  <SeriesCollectionDirective>
+    <SeriesDirective 
+    type="Spline" 
+    dataSource={currentData}
+    xName="month"
+    yName="Temperature"
+    name={this.state.data.devices.device}
+    marker={{dataLabel:{visible: true}, visible:true}}
+    ></SeriesDirective>
+  </SeriesCollectionDirective>
+</ChartComponent>
+      
+<ChartComponent title={this.state.data.main_title}  primaryXAxis={{valueType:'Category', title:"month"}} 
+primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible:true}} tooltip={{enable:true}}>
+  <Inject services={[ColumnSeries, Category, Legend, DataLabel,Tooltip]}></Inject>
+  <SeriesCollectionDirective>
+    <SeriesDirective 
+    type="Column" 
+    dataSource={currentData}
+    xName="month"
+    yName="Temperature"
+    name={this.state.data.devices.device}
+    ></SeriesDirective>
+  </SeriesCollectionDirective>
+</ChartComponent>
+    </div>
+    </div>
+    </div>
+      ); 
+    }
+
+    else if(this.state.data.devices.device.length==2 && this.state.data.devices.device[0]=="Volume" && this.state.data.devices.device[1]=="Voltage" ){
+      return(
+              <div className="e-card " style={{ width: `1000px`, height: '1000px', backgroundColor: 'green'}}>
+            <div class="e-card-header" > 
+            <div className="e-card-header-caption">
+            <ChartComponent title={this.state.data.main_title} primaryXAxis={{valueType:"Category", title:"Month"}} 
+            primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible:true}} tooltip={{enable:true}}>
+
+            <Inject services={[SplineSeries, Category, Legend, DataLabel,Tooltip]}></Inject>
+            <SeriesCollectionDirective>
+
+            <SeriesDirective 
+            type="Spline" 
+            dataSource={volumeData}
+            xName="month"
+            yName="Temperature"
+            name="Volume"
+            marker={{dataLabel:{visible: true}, visible:true}}
+            ></SeriesDirective>
+            <SeriesDirective 
+                type="Spline" 
+                dataSource={voltageData}
+                xName="month"
+                yName="Temperature"
+                name="Voltage"
+                marker={{dataLabel:{visible: true}, visible:true}}
+                ></SeriesDirective>
+
+
+
+            </SeriesCollectionDirective>
+            </ChartComponent>
+            <br/>
+            <ChartComponent title={this.state.data.main_title} primaryXAxis={{valueType:"Category", title:"Month"}} 
+            primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible:true}} tooltip={{enable:true}}>
+
+            <Inject services={[ColumnSeries, LineSeries, Category, Legend, DataLabel,Tooltip]}></Inject>
+            <SeriesCollectionDirective>
+
+            <SeriesDirective 
+            type="Column" 
+            dataSource={volumeData}
+            xName="month"
+            yName="Temperature"
+            name="Volume"
+
+            ></SeriesDirective>
+            <SeriesDirective 
+                type="Column" 
+                dataSource={voltageData}
+                xName="month"
+                yName="Temperature"
+                name="Voltage"
+                ></SeriesDirective>
+
+
+
+            </SeriesCollectionDirective>
+            </ChartComponent>
+            </div>
+            </div>
+            </div>
+      );
+    }
+    else if(this.state.data.devices.device.length==2 && this.state.data.devices.device[0]=="Temperature" && this.state.data.devices.device[1]=="Volume" ){
+      return(
+              <div className="e-card " style={{ width: `1000px`, height: '1000px', backgroundColor: 'green'}}>
+            <div class="e-card-header" > 
+            <div className="e-card-header-caption">
+            <ChartComponent title={this.state.data.main_title} primaryXAxis={{valueType:"Category", title:"Month"}} 
+            primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible:true}} tooltip={{enable:true}}>
+
+            <Inject services={[SplineSeries, Category, Legend, DataLabel,Tooltip]}></Inject>
+            <SeriesCollectionDirective>
+
+            <SeriesDirective 
+            type="Spline" 
+            dataSource={TemperatureData}
+            xName="month"
+            yName="Temperature"
+            name="Temperature"
+            marker={{dataLabel:{visible: true}, visible:true}}
+            ></SeriesDirective>
+            <SeriesDirective 
+                type="Spline" 
+                dataSource={volumeData}
+                xName="month"
+                yName="Temperature"
+                name="Volume"
+                marker={{dataLabel:{visible: true}, visible:true}}
+                ></SeriesDirective>
+
+
+
+            </SeriesCollectionDirective>
+            </ChartComponent>
+            <br/>
+            <ChartComponent title={this.state.data.main_title} primaryXAxis={{valueType:"Category", title:"Month"}} 
+            primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible:true}} tooltip={{enable:true}}>
+
+            <Inject services={[ColumnSeries, LineSeries, Category, Legend, DataLabel,Tooltip]}></Inject>
+            <SeriesCollectionDirective>
+
+            <SeriesDirective 
+            type="Column" 
+            dataSource={TemperatureData}
+            xName="month"
+            yName="Temperature"
+            name="Temperature"
+
+            ></SeriesDirective>
+            <SeriesDirective 
+                type="Column" 
+                dataSource={volumeData}
+                xName="month"
+                yName="Temperature"
+                name="Volume"
+                ></SeriesDirective>
+
+
+
+            </SeriesCollectionDirective>
+            </ChartComponent>
+            </div>
+            </div>
+            </div>
+      );
+    }
+    
+    else if(this.state.data.devices.device.length==2 && this.state.data.devices.device[0]=="Temperature" && this.state.data.devices.device[1]=="Voltage" ){
+      return(
+              <div className="e-card " style={{ width: `1000px`, height: '1000px', backgroundColor: 'green'}}>
+            <div class="e-card-header" > 
+            <div className="e-card-header-caption">
+            <ChartComponent title={this.state.data.main_title} primaryXAxis={{valueType:"Category", title:"Month"}} 
+            primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible:true}} tooltip={{enable:true}}>
+
+            <Inject services={[SplineSeries, Category, Legend, DataLabel,Tooltip]}></Inject>
+            <SeriesCollectionDirective>
+
+            <SeriesDirective 
+            type="Spline" 
+            dataSource={TemperatureData}
+            xName="month"
+            yName="Temperature"
+            name="Temperature"
+            marker={{dataLabel:{visible: true}, visible:true}}
+            ></SeriesDirective>
+            <SeriesDirective 
+                type="Spline" 
+                dataSource={voltageData}
+                xName="month"
+                yName="Temperature"
+                name="Voltage"
+                marker={{dataLabel:{visible: true}, visible:true}}
+                ></SeriesDirective>
+
+
+
+            </SeriesCollectionDirective>
+            </ChartComponent>
+            <br/>
+            <ChartComponent title={this.state.data.main_title} primaryXAxis={{valueType:"Category", title:"Month"}} 
+            primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible:true}} tooltip={{enable:true}}>
+
+            <Inject services={[ColumnSeries, LineSeries, Category, Legend, DataLabel,Tooltip]}></Inject>
+            <SeriesCollectionDirective>
+
+            <SeriesDirective 
+            type="Column" 
+            dataSource={TemperatureData}
+            xName="month"
+            yName="Temperature"
+            name="Temperature"
+
+            ></SeriesDirective>
+            <SeriesDirective 
+                type="Column" 
+                dataSource={voltageData}
+                xName="month"
+                yName="Temperature"
+                name="Voltage"
+                ></SeriesDirective>
+
+
+
+            </SeriesCollectionDirective>
+            </ChartComponent>
+            </div>
+            </div>
+            </div>
+      );
+    }
+    else if (this.state.data.devices.device.length==3) {
+      return(
+      <div className="e-card " style={{ width: `1000px`, height: '1000px', backgroundColor: 'green'}}>
+    <div class="e-card-header" > 
+    
+    <div className="e-card-header-caption">
+    <ChartComponent title={this.state.data.main_title}  primaryXAxis={{valueType:'Category', title:"month"}} 
+primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible:true}} tooltip={{enable:true}}>
+  <Inject services={[SplineSeries, Category, Legend, DataLabel,Tooltip]}></Inject>
+  <SeriesCollectionDirective>
+    <SeriesDirective 
+    type="Spline" 
+    dataSource={voltageData}
+    xName="month"
+    yName="Temperature"
+    name="Voltage"
+    marker={{dataLabel:{visible: true}, visible:true}}
+    ></SeriesDirective>
+     <SeriesDirective 
+    type="Spline" 
+    dataSource={TemperatureData}
+    xName="month"
+    yName="Temperature"
+    name="Temperature"
+    marker={{dataLabel:{visible: true}, visible:true}}
+    ></SeriesDirective>
+     <SeriesDirective 
+    type="Spline" 
+    dataSource={volumeData}
+    xName="month"
+    yName="Temperature"
+    name="Volume"
+    marker={{dataLabel:{visible: true}, visible:true}}
+    ></SeriesDirective>
+  </SeriesCollectionDirective>
+</ChartComponent>
+<br/>
+<ChartComponent title={this.state.data.main_title}  primaryXAxis={{valueType:'Category', title:"month"}} 
+primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible:true}} tooltip={{enable:true}}>
+  <Inject services={[ColumnSeries, Category, Legend, DataLabel,Tooltip]}></Inject>
+  <SeriesCollectionDirective>
+    <SeriesDirective 
+    type="Column" 
+    dataSource={voltageData}
+    xName="month"
+    yName="Temperature"
+    name="Voltage"
+    ></SeriesDirective>
+     <SeriesDirective 
+    type="Column" 
+    dataSource={TemperatureData}
+    xName="month"
+    yName="Temperature"
+    name="Temperature"
+    ></SeriesDirective> <SeriesDirective 
+    type="Column" 
+    dataSource={volumeData}
+    xName="month"
+    yName="Temperature"
+    name="Volume"
     ></SeriesDirective>
   </SeriesCollectionDirective>
 </ChartComponent>
@@ -144,11 +529,11 @@ primaryYAxis={{title:"Volume"}} legendSettings={{visible:true}} tooltip={{enable
       
       <div className="main">
         <CSSTransition
-      key={this.state.count}
-      addEndListener={(node, done) => {
-        node.addEventListener("transitionend", done, false);
-      }}
-      classNames="fade"
+      // key={this.state.count}
+      // addEndListener={(node, done) => {
+      //   node.addEventListener("transitionend", done, false);
+      // }}
+      // classNames="fade"
     >
           
             
