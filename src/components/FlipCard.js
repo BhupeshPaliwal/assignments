@@ -60,6 +60,7 @@ class FlipCard extends Component {
     <div class="e-card-header" > 
     
     <div className="e-card-header-caption">
+    {/* {this.state.data != null?this.state.data.devices.parent[0]:null} */}
     <ChartComponent title={this.state.data.main_title} primaryXAxis={{valueType:"Category", title:"Month"}} 
 primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible:true}} tooltip={{enable:true}}>
   
@@ -71,7 +72,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={TemperatureData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[0]}
+  name={this.state.data.devices.parent + " " + this.state.data.devices.device[0]}
     marker={{dataLabel:{visible: true}, visible:true}}
     ></SeriesDirective>
     
@@ -92,7 +93,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={TemperatureData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[0]}
+    name={this.state.data.devices.parent + " " + this.state.data.devices.device[0]}
     
     ></SeriesDirective>
     
@@ -124,7 +125,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
             dataSource={volumeData}
             xName="month"
             yName="Temperature"
-            name={this.state.data.devices.device[0]}
+            name={this.state.data.devices.parent[0] + " " + this.state.data.devices.device[0]}
             marker={{dataLabel:{visible: true}, visible:true}}
             ></SeriesDirective>
             <SeriesDirective 
@@ -132,7 +133,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
                 dataSource={voltageData}
                 xName="month"
                 yName="Temperature"
-                name={this.state.data.devices.device[1]}
+                name={this.state.data.devices.parent[1] + " " + this.state.data.devices.device[1]}
                 marker={{dataLabel:{visible: true}, visible:true}}
                 ></SeriesDirective>
 
@@ -152,7 +153,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
             dataSource={volumeData}
             xName="month"
             yName="Temperature"
-            name={this.state.data.devices.device[0]}
+            name={this.state.data.devices.parent[0] + " " + this.state.data.devices.device[0]}
 
             ></SeriesDirective>
             <SeriesDirective 
@@ -160,7 +161,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
                 dataSource={voltageData}
                 xName="month"
                 yName="Temperature"
-                name={this.state.data.devices.device[1]}
+                name={this.state.data.devices.parent[1] + " " +this.state.data.devices.device[1]}
                 ></SeriesDirective>
 
 
@@ -188,7 +189,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={voltageData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[0]}
+    name={this.state.data.devices.parent[0] + " " + this.state.data.devices.device[0]}
     marker={{ visible:true}}
     ></SeriesDirective>
      <SeriesDirective 
@@ -196,7 +197,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={TemperatureData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[1]}
+    name={this.state.data.devices.parent[1] + " " + this.state.data.devices.device[1]}
     marker={{visible:true}}
     ></SeriesDirective>
      <SeriesDirective 
@@ -204,7 +205,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={volumeData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[2]}
+    name={this.state.data.devices.parent[2] + " " +this.state.data.devices.device[2]}
     marker={{ visible:true}}
     ></SeriesDirective>
   </SeriesCollectionDirective>
@@ -219,20 +220,20 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={voltageData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[0]}
+    name={this.state.data.devices.parent[0] + " " + this.state.data.devices.device[0]}
     ></SeriesDirective>
      <SeriesDirective 
     type="Column" 
     dataSource={TemperatureData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[1]}
+    name={this.state.data.devices.parent[1] + " " + this.state.data.devices.device[1]}
     ></SeriesDirective> <SeriesDirective 
     type="Column" 
     dataSource={volumeData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[2]}
+    name={this.state.data.devices.parent[2] + " " + this.state.data.devices.device[2]}
     ></SeriesDirective>
   </SeriesCollectionDirective>
 </ChartComponent>
@@ -257,7 +258,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={voltageData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[0]}
+    name={this.state.data.devices.parent[0] + " " + this.state.data.devices.device[0]}
     marker={{ visible:true}}
     ></SeriesDirective>
      <SeriesDirective 
@@ -265,7 +266,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={TemperatureData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[1]}
+    name={this.state.data.devices.parent[1] + " " +this.state.data.devices.device[1]}
     marker={{visible:true}}
     ></SeriesDirective>
      <SeriesDirective 
@@ -273,7 +274,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={volumeData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[2]}
+    name={this.state.data.devices.parent[2] + " " +this.state.data.devices.device[2]}
     marker={{visible:true}}
     ></SeriesDirective>
     <SeriesDirective 
@@ -281,7 +282,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={currentData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[3]}
+    name={this.state.data.devices.parent[3] + " " +this.state.data.devices.device[3]}
     marker={{visible:true}}
     ></SeriesDirective>
   </SeriesCollectionDirective>
@@ -296,20 +297,20 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={voltageData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[0]}
+    name={this.state.data.devices.parent[0] + " " + this.state.data.devices.device[0]}
     ></SeriesDirective>
      <SeriesDirective 
     type="Column" 
     dataSource={TemperatureData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[1]}
+    name={this.state.data.devices.parent[1] + " " +this.state.data.devices.device[1]}
     ></SeriesDirective> <SeriesDirective 
     type="Column" 
     dataSource={volumeData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[2]}
+    name={this.state.data.devices.parent[2] + " " +this.state.data.devices.device[2]}
     ></SeriesDirective>
     
     <SeriesDirective 
@@ -317,7 +318,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={currentData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[3]}
+    name={this.state.data.devices.parent[3] + " " +this.state.data.devices.device[3]}
    
     ></SeriesDirective>
   </SeriesCollectionDirective>
@@ -343,7 +344,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={voltageData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[0]}
+    name={this.state.data.devices.parent[0] + " " + this.state.data.devices.device[0]}
     marker={{visible:true}}
     ></SeriesDirective>
      <SeriesDirective 
@@ -351,7 +352,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={TemperatureData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[1]}
+    name={this.state.data.devices.parent[1] + " " + this.state.data.devices.device[1]}
     marker={{ visible:true}}
     ></SeriesDirective>
      <SeriesDirective 
@@ -359,7 +360,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={volumeData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[2]}
+    name={this.state.data.devices.parent[2] + " " + this.state.data.devices.device[2]}
     marker={{visible:true}}
     ></SeriesDirective>
     <SeriesDirective 
@@ -367,7 +368,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={currentData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[3]}
+    name={this.state.data.devices.parent[3] + " " + this.state.data.devices.device[3]}
     marker={{visible:true}}
     ></SeriesDirective>
         <SeriesDirective 
@@ -375,7 +376,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={resistanceData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[4]}
+    name={this.state.data.devices.parent[4] + " " + this.state.data.devices.device[4]}
     marker={{visible:true}}
     ></SeriesDirective>
   </SeriesCollectionDirective>
@@ -390,20 +391,20 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={voltageData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[0]}
+    name={this.state.data.devices.parent[0] + " " + this.state.data.devices.device[0]}
     ></SeriesDirective>
      <SeriesDirective 
     type="Column" 
     dataSource={TemperatureData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[1]} 
+    name={this.state.data.devices.parent[1] + " " + this.state.data.devices.device[1]} 
     ></SeriesDirective> <SeriesDirective 
     type="Column"
     dataSource={volumeData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[2]} 
+    name={this.state.data.devices.parent[2] + " " + this.state.data.devices.device[2]} 
     ></SeriesDirective>
     
     <SeriesDirective 
@@ -411,7 +412,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={currentData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[3]}
+    name={this.state.data.devices.parent[3] + " " + this.state.data.devices.device[3]}
    
     ></SeriesDirective>
      <SeriesDirective 
@@ -419,7 +420,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={resistanceData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[4]}
+    name={this.state.data.devices.parent[4] + " " + this.state.data.devices.device[4]}
    
     ></SeriesDirective>
   </SeriesCollectionDirective>
@@ -445,7 +446,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={voltageData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[0]}
+    name={this.state.data.devices.parent[0] + " " + this.state.data.devices.device[0]}
     marker={{ visible:true}}
     ></SeriesDirective>
      <SeriesDirective 
@@ -453,7 +454,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={TemperatureData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[1]}
+    name={this.state.data.devices.parent[1] + " " + this.state.data.devices.device[1]}
     marker={{visible:true}}
     ></SeriesDirective>
      <SeriesDirective 
@@ -461,7 +462,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={volumeData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[2]}
+    name={this.state.data.devices.parent[2] + " " + this.state.data.devices.device[2]}
     marker={{visible:true}}
     ></SeriesDirective>
     <SeriesDirective 
@@ -469,7 +470,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={currentData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[3]}
+    name={this.state.data.devices.parent[3] + " " + this.state.data.devices.device[3]}
     marker={{visible:true}}
     ></SeriesDirective>
         <SeriesDirective 
@@ -477,7 +478,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={resistanceData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[4]}
+    name={this.state.data.devices.parent[4] + " " + this.state.data.devices.device[4]}
     marker={{visible:true}}
     ></SeriesDirective>
     <SeriesDirective 
@@ -485,7 +486,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={salesData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[5]}
+    name={this.state.data.devices.parent[5] + " " + this.state.data.devices.device[5]}
     marker={{ visible:true}}
     ></SeriesDirective>
   </SeriesCollectionDirective>
@@ -501,20 +502,20 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={voltageData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[0]}
+    name={this.state.data.devices.parent[0] + " " +this.state.data.devices.device[0]}
     ></SeriesDirective>
      <SeriesDirective 
     type="Column" 
     dataSource={TemperatureData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[1]} 
+    name={this.state.data.devices.parent[1] + " " +this.state.data.devices.device[1]} 
     ></SeriesDirective> <SeriesDirective 
     type="Column"
     dataSource={volumeData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[2]} 
+    name={this.state.data.devices.parent[2] + " " + this.state.data.devices.device[2]} 
     ></SeriesDirective>
     
     <SeriesDirective 
@@ -522,7 +523,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={currentData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[3]}
+    name={this.state.data.devices.parent[3] + " " + this.state.data.devices.device[3]}
    
     ></SeriesDirective>
      <SeriesDirective 
@@ -530,7 +531,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={resistanceData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[4]}
+    name={this.state.data.devices.parent[4] + " " + this.state.data.devices.device[4]}
    
     ></SeriesDirective>
     <SeriesDirective 
@@ -538,7 +539,7 @@ primaryYAxis={{title:(this.state.data.devices.device)}} legendSettings={{visible
     dataSource={salesData}
     xName="month"
     yName="Temperature"
-    name={this.state.data.devices.device[5]}
+    name={this.state.data.devices.parent[5] + " " +this.state.data.devices.device[5]}
     ></SeriesDirective>
   </SeriesCollectionDirective>
 </ChartComponent>
