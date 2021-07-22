@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons&style=outlined");
+#root{ padding: 20px; }
+.tabular{
+  height: 480px;
+  width: 700px;
+  margin-left: -10px;
+  margin-right: -10px;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  font-family: monospace;
+  font-size: 0.9em;
+  border-radius: 3px;
+  border: 3px solid #bfbfbf;
+  color: #4d4d4d;
+}
+
+/*Buttons, topbar, bottombar*/
+.top, .bottom{
+  display: flex;
+  align-items: center;
+  height: 60px;
+  vertical-align: middle;
+}
+.tit{ 
+  display: inline-block; 
+  margin: 0px 20px 0px 0px;
+  padding-left: 20px;
+  width: 150px;
+  font-size: 1.3em;
+  text-align: left;
+}
+.tab-end{
+  margin-left: auto;
+}
+.tab-btns, Dropbutton{
+  display: inline-block;
+  margin: 0px 10px 0px 10px;
+  background-color: transparent;
+}
+.tab-btns input{
+  transition:all 0.2s ease-out;
+  width:100px;
+  border-radius:0;
+  box-shadow:none;
+  outline: none;
+  padding:0;
+  margin:0;
+  border:0;
+  background-color: transparent;
+  opacity:1;
+}
+.tab-btns input:hover{
+  padding-bottom: 5px;
+  border-bottom: 2px solid #000;
+}
+.tab-btns button{
+  display: inline-block;
+  width: 80px;
+  border: none;
+  margin: 0;
+  cursor: pointer;
+  background-color: white;
+  padding: 5px;
+  border-radius: 0px;
+  transition:all 0.2s ease-out;
+  align-items: center;
+}
+.tab-btns button:hover{
+  transform: scale(1.4)
+}
+.tab-btns-scroll button{
+  display: inline-block;
+  border: none;
+  margin: 0;
+  background-color: lightgrey;
+  transition: all 0.2s ease-out;
+  margin-left: 20px;
+  padding: 5px 10px 5px 10px;
+}
+.tab-btns-scroll button:hover{
+  background-color: white;
+  color: #40a9ff;
+  padding: 5px 15px 5px 15px;
+  font-weight: bolder;
+}
+/*-------------------------------*/
+
+
+
+
+
+table{ width: 100%; }
+.headings, .scrollon{ width: 100%; }
+.headings thead, .scrollon tr{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+  height: 60px;
+  border-bottom: 2px solid #bfbfbf;
+}
+.headings th, .scrollon td{
+  display: inline-block;
+  width: 20%;
+  margin: 0px 5px 0px 5px;
+  font-weight: inherit;
+  font-size: 1.2em;
+  text-align: right;
+  padding-right: 30px;
+}
+.headings thead{ border-top: 2px solid #bfbfbf; }
+.scrollon{
+  position: relative;
+  overflow-y: auto;
+  height: 300px;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
+} 
+.scrollon::-webkit-scrollbar { display: none; /* for Chrome, Safari, and Opera */ }
+.tit, .headings th{ font-weight: bold; }
+.bodyrows td{ color: blue; padding-right: 35px;  font-family: monospace; }
+.bodyrows .has-para, .headings .has-para{ text-align: left; padding-left: 20px; color: #4d4d4d; font-family: inherit; display: inline-block; min-width: 135px; }
+
+
+
+/*Adding page number between arrow buttons*/
+.bottom .tab-end{ display: flex; vertical-align: middle;}
+.bottom .tab-end .tab-btns button, .page-no{ display: inline-block; width: 25px; height: 25px; font: 1.3em bold monospace; color: inherit; font-weight: 600; }
+.tab-end{ padding-right: 10px; }
+.page-no{ margin-top: 7px; }
+.top button{ width: 50px; }
+.top Button{ 
+  border: none;  
+  transition: none; 
+}
+/*----------------------------------------*/

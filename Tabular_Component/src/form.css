@@ -1,0 +1,69 @@
+@import "../node_modules/@syncfusion/ej2-base/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-inputs/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-buttons/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-navigations/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-react-dropdowns/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-react-inputs/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-popups/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css";
+
+.form{ 
+  background-color: white; 
+  position: relative;
+  display: block;
+  height: 380px;
+  width: 500px;
+  overflow-y: auto;
+  padding: 0; 
+  margin: 0;
+  text-align: left;
+}
+.upper-form{ 
+  display: flex; 
+  width: 100%; 
+  min-height: 80%; 
+  justify-content: center; 
+  padding: 0; 
+  margin: 0; 
+}
+.tit-focus, .summary{ 
+  display: inline-block; 
+  width: 50%; height: 100%; 
+  padding: 5px 20px 0 20px; 
+  margin: 0; 
+  overflow-x: hidden;
+} 
+.save-conf{ 
+  display: flex; 
+  width: 100%; max-height: 20%; 
+  justify-content: left; 
+  padding-left: 20px; 
+  margin: 0; 
+}
+
+.save-conf button{
+  display: inline-block;
+  border: none;
+  margin: 0;
+  background-color: #40a9ff;
+  color: white;
+  transition: all 0.2s ease-out;
+  padding: 5px 10px 5px 10px;
+}
+.save-conf button:hover{
+  background-color: white;
+  color: #40a9ff;
+  padding: 5px 20px 5px 20px;
+  font-weight: bolder;
+}
+
+
+.textbox{ 
+  height: 40px; 
+  display: inline;
+  padding: 0; margin: 0;  
+}
+TextBoxComponent{ display: inline; height: 25px; }
+
+.l, .c, .r, .tit-input{ display: inline-block; width: 70%; }
+.l-c-r .textbox, .t{ display: inline-block; width: 30%; }
